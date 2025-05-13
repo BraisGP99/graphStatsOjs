@@ -93,7 +93,8 @@ class GraphStatsOjsPlugin extends GenericPlugin
             $stats['month'][$i] = $totalMonth;
         }
 
-        $fromYear = 2020;
+        $fromYear = date("Y", strtotime("-5 years"));
+
         for($i = 0;$i<=5;$i++){
             $totalYear = $statsService->getTotalsByType($submissionId,$context->getId(),"$fromYear-01-01","$fromYear-12-31");
             $totalYear['year'] = $fromYear;
