@@ -23,4 +23,5 @@ You can install this plugin in two ways:
 
 #### To be considered
 
-The plugin applies custom css rules that can be overwritten in the "templates/displayChart.tpl" file
+-   The plugin applies custom css rules that can be overwritten in the "templates/displayChart.tpl" file
+-   The yearly rate by default is -5 years, which can be changed in the php file (line 96) strtotime function to declare how much traceback is required. (For example strtotime("-10 Years") would trace it back to 2015 and so on)
