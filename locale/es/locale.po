@@ -24,4 +24,6 @@ msgstr "Mostrar estadísticas mensuales"
 msgid "plugins.generic.graphStatsOjs.AnualButton"
 msgstr "Mostrar estadísticas anuales"
 
+msgid "plugins.block.graphStatsOjs.fromYear.description"
+msgstr "Escoger el año por el que empezar a mostrar las estadísticas" 
 

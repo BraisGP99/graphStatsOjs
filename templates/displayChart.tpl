@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', function () {
     const totalDownloadStatsYearly = downloadStatsYearly.map(el =>
         Object.values(el).reduce((acc, curr) => acc + curr, 0)
     );
-    
+    console.log(stats)
     const MONTHS = [
   'Jan',
   'Feb',

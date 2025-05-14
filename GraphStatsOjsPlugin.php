@@ -18,6 +18,12 @@ use APP\core\Application;
 use APP\template\TemplateManager;
 use APP\facades\Repo;
 use APP\core\Services;
+use PKP\core\JSONMessage;
+use APP\plugins\generic\graphStatsOjs\classes\Settings\Actions;
+use APP\plugins\generic\graphStatsOjs\classes\Settings\Manage;
+use APP\core\Request;
+use APP\plugins\generic\graphStatsOjs\classes\Constants;
+
 
 class GraphStatsOjsPlugin extends GenericPlugin
 {
@@ -78,6 +84,7 @@ class GraphStatsOjsPlugin extends GenericPlugin
         return false;
     }
 
+
     private function getStatistics($submissionId){
         $request = Application::get()->getRequest();
         $context = $request->getContext();
@@ -92,18 +99,50 @@ class GraphStatsOjsPlugin extends GenericPlugin
             $totalMonth['month'] = $i;
             $stats['month'][$i] = $totalMonth;
         }
-
-        $fromYear = date("Y", strtotime("-5 years"));
-
-        for($i = 0;$i<=5;$i++){
-            $totalYear = $statsService->getTotalsByType($submissionId,$context->getId(),"$fromYear-01-01","$fromYear-12-31");
-            $totalYear['year'] = $fromYear;
+        
+        $fromYear =(int)$this->getSetting($context->getId(), Constants::FROM_YEAR);
+        echo $fromYear;
+        $fromYear = $fromYear > 2000  ?  $fromYear : 2000;
+        $yearNow = date('Y');
+        for($i = 0;$i<=($yearNow-$fromYear);$i++){
+            $currentYear = $fromYear + $i;
+            $totalYear = $statsService->getTotalsByType($submissionId,$context->getId(),"$currentYear-01-01","$currentYear-12-31");
+            $totalYear['year'] = $currentYear;
             $stats['year'][$i] = $totalYear;
-            $fromYear++;
         }
 
 
         return json_encode($stats);
+    }
+
+    /**
+     * Add a settings action to the plugin's entry in the plugins list.
+     *
+     * @param Request $request
+     * @param array $actionArgs
+     */
+    public function getActions($request, $actionArgs): array
+    {
+        $actions = new Actions($this);
+        
+        
+
+        return $actions->execute($request, $actionArgs, parent::getActions($request, $actionArgs));
+    }
+
+ 
+    /**
+     * Load a form when the `settings` button is clicked and
+     * save the form when the user saves it.
+     *
+     * @param array $args
+     * @param Request $request
+     */
+    public function manage($args, $request): JSONMessage
+    {
+        $manage = new Manage($this);
+      
+        return $manage->execute($args, $request);
     }
 
 }
