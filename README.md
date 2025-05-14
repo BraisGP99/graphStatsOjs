@@ -12,7 +12,7 @@ You can install this plugin in two ways:
 
 -   Go to the Dashboard > Website Settings > Plugins.
 -   Click on Upload a New Plugin.
--   Select the plugin .tar.gz or .zip archive and upload it.
+-   Select the plugin `.tar.gz` or `.zip` archive and upload it.
 -   Once installed, make sure to enable the plugin.
 
 #### 2. Manual Installation
