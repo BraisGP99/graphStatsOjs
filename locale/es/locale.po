@@ -17,13 +17,18 @@ msgstr "Estadísticas gráficas para OJS"
 msgid "plugins.generic.graphStatsOjs.description"
 msgstr "Módulo que permite ver estadísticas gráficas para OJS"
 
-msgid "plugins.generic.graphStatsOjs.MonthButton"
+msgid "plugins.generic.graphStatsOjs.monthButton"
 msgstr "Mostrar estadísticas mensuales"
 
 
-msgid "plugins.generic.graphStatsOjs.AnualButton"
+msgid "plugins.generic.graphStatsOjs.anualButton"
 msgstr "Mostrar estadísticas anuales"
 
-msgid "plugins.block.graphStatsOjs.fromYear.description"
-msgstr "Escoger el año por el que empezar a mostrar las estadísticas" 
+msgid "plugins.generic.graphStatsOjs.editorialButton"
+msgstr "Mostrar estadísticas de editorial"
 
+msgid "plugins.generic.graphStatsOjs.autoresPais"
+msgstr "Mostrar estadísticas de autores por país"
+
+msgid "plugins.block.graphStatsOjs.fromYear.description"
+msgstr "Escoger el año que restar al actual" 

@@ -18,15 +18,20 @@ msgid "plugins.generic.graphStatsOjs.description"
 msgstr "A plugin Show stats via graph.js "
 
 
-msgid "plugins.generic.graphStatsOjs.MonthButton"
+msgid "plugins.generic.graphStatsOjs.monthButton"
 msgstr "Show monthly stats"
 
-
-msgid "plugins.generic.graphStatsOjs.AnualButton"
+msgid "plugins.generic.graphStatsOjs.anualButton"
 msgstr "Show yearly stats"
 
+msgid "plugins.generic.graphStatsOjs.editorialButton"
+msgstr "Show editorial stats"
+
+msgid "plugins.generic.graphStatsOjs.autoresPais"
+msgstr "Show author by country stats"
+
 msgid "plugins.block.graphStatsOjs.fromYear.description"
-msgstr "Select year from which to start taking stats" 
+msgstr "Select years to take from actual" 
 
 
 
